@@ -1,0 +1,1 @@
+<View> is the replacement of <div> in React-Native
