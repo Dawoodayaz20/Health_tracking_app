@@ -3,6 +3,10 @@ import {Link} from "expo-router"
 
 export default function Index() {
   return (
+    <View style={styles.outerView}>
+      <Text>
+        Profile
+      </Text>
     <View
       style={styles.view}
     >
@@ -10,12 +14,21 @@ export default function Index() {
       <Text>Hello from the text element in index page</Text>
       <Link href="/login" style={styles.navButton}>Login Page</Link>
     </View>
+    <View>
+      <Text>Hello</Text>
+    </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  outerView:{
+        marginTop: 50,
+        display:"flex",
+        justifyContent: "center",
+        alignItems: "center",
+  },
   view:{
-        flex: 1,
         justifyContent: "center",
         alignItems: "center",
       },
