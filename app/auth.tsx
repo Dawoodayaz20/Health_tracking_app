@@ -1,3 +1,4 @@
+import { useAuth } from "@/lib/auth-context";
 import { useState } from "react";
 import { KeyboardAvoidingView, Platform, View, StyleSheet } from "react-native";
 import {Button, Text, TextInput, useTheme} from 'react-native-paper'
@@ -6,7 +7,8 @@ export default function AuthScreen() {
     const [isSignUp, setisSignUp] = useState<boolean>(true);
     const [email, setEmail] = useState<string>("")
     const [pass, setPass] = useState<string>("")
-    const [error, setError] = useState<string>("")
+    const [error, setError] = useState<string | null>("")
+    const [singIn, signUp] = useAuth()
 
     const theme = useTheme()
 
@@ -17,6 +19,23 @@ export default function AuthScreen() {
 
         if(pass.length < 6){
             setError("Passwords must be atleast 6 characters long!")
+        }
+
+        // if(!email.includes("@gmail.com")) {
+        //     setError("Invalid email!")
+        // }
+
+        setError(null);
+
+        if (isSignUp) {
+            const error = signUp(email, pass)
+            if(error){
+                setError(error);
+                return;
+            }
+        }
+        else{
+            const error = singIn(email, pass)
         }
     }
 
@@ -44,7 +63,7 @@ export default function AuthScreen() {
             <TextInput 
                 label='Password' 
                 autoCapitalize="none" 
-                keyboardType="email-address"
+                secureTextEntry
                 mode="outlined"
                 style={styles.inputfields}
                 onChangeText={setPass}

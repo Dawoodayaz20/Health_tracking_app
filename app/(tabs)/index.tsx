@@ -1,4 +1,4 @@
-import { SafeAreaView, View, StyleSheet, Image } from "react-native";
+import { ScrollView, SafeAreaView, View, StyleSheet, Image } from "react-native";
 import {Link} from "expo-router"
 import { Text } from 'react-native-paper'
 
@@ -11,8 +11,8 @@ export default function Index() {
   const profilepic = require('../../assets/images/icon.png')
 
   return (
-    <SafeAreaView>
-    
+    <SafeAreaView style={{ flex: 1 }}>
+    <ScrollView contentContainerStyle={{ padding: 10 }}>
     <View style={styles.outerView}>
       <Text style={styles.heading} variant="headlineMedium">
         Profile
@@ -30,11 +30,10 @@ export default function Index() {
         </View>
       </View>
 
-
     <View style={styles.sections}>
     <View
       style={styles.view}>
-        <Link href="/auth"><Text variant="labelLarge">Reminders</Text></Link>
+        <Link href="/reminderPage"><Text variant="labelLarge">Reminders</Text></Link>
           <Image 
             source={reminder}
             style={[styles.icons, {resizeMode: 'contain'}]} />
@@ -65,7 +64,7 @@ export default function Index() {
     </View>
     </View>
     </View>
-    
+    </ScrollView>
     </SafeAreaView>
   );
 }
