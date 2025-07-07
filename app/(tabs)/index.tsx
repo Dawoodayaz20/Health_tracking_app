@@ -8,7 +8,7 @@ export default function Index() {
   const medicalRec = require('../../assets/images/medicalrecords.png')
   const medicalassist = require('../../assets/images/medicalassist.png')
   const medicines = require('../../assets/images/medicines.png')
-  const profilepic = require('../../assets/images/icon.png')
+  const profilepic = require('../../assets/images/Zulkifl Profile1.jpg')
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -57,7 +57,7 @@ export default function Index() {
     
     <View
       style={styles.view}>
-        <Link href="/auth"><Text variant="labelLarge">Medical Assistant</Text></Link>
+        <Link href="../../medicalAgent/medicalassistant"><Text variant="labelLarge">Medical Assistant</Text></Link>
           <Image 
             source={medicalassist}
             style={[styles.icons, {resizeMode: 'contain'}]} />
@@ -71,7 +71,7 @@ export default function Index() {
 
 const styles = StyleSheet.create({
   heading:{
-    color:'#013679'
+    color:'#1E90FF'
   },
   outerView:{
         marginTop: 50,
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     height:200,
     justifyContent: 'center',
     margin: 40,
-    borderColor: '#013679',
+    borderColor: '#1E90FF',
     borderWidth: 2,
     borderRadius: 10,
     flexDirection:'row'
@@ -93,12 +93,14 @@ const styles = StyleSheet.create({
   textview:{
     margin: 10,
     justifyContent:'center',
+    fontSize: 12
     
   },
   profilepic:{
     width: 100,
     height: 100,
-    margin: 50
+    margin: 50,
+    borderRadius: 60
   },
   sections:{
     flexDirection:'row',
@@ -112,7 +114,7 @@ const styles = StyleSheet.create({
         cursor: 'pointer',
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: '#BAD4DB',
+        backgroundColor: '#1E90FF',
         width:180,
         padding: 20,
         borderRadius: 15,
@@ -125,3 +127,4 @@ const styles = StyleSheet.create({
     margin: 5,
   }
 })
+// #BAD4DB

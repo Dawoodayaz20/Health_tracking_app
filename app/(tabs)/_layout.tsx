@@ -5,11 +5,20 @@ import {StyleSheet} from "react-native";
 export default function TabsLayout() {
   return (
     <Tabs screenOptions={
-      { tabBarActiveTintColor : "#fff",
-        tabBarActiveBackgroundColor: "#013679",
-        tabBarInactiveTintColor:'black'
+      { tabBarActiveTintColor : "#1E90FF",
+        tabBarActiveBackgroundColor: "",
+        tabBarInactiveTintColor:'#696969',
+        headerStyle: {backgroundColor: "#1E90FF"},
+        headerShadowVisible: true,
+        tabBarStyle: {
+          backgroundColor: "",
+          borderTopWidth: 0,
+          elevation: 0,
+          shadowOpacity: 0
+        },        
       }}
     >
+      {/* #013679 */}
       <Tabs.Screen name="index" options={{ 
         title: "Home",
         headerStyle: styles.headerStyle,
@@ -25,7 +34,7 @@ export default function TabsLayout() {
 
 const styles = StyleSheet.create ({
   headerStyle:{
-      backgroundColor: "#013679",
+      backgroundColor: "#1E90FF",
   }
 })
 
