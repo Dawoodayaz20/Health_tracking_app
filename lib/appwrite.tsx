@@ -1,9 +1,9 @@
-import {Account, Client} from 'react-native-appwrite'
+import {Account, Client} from 'appwrite'
 
 const myclient = new Client()
-    .setEndpoint(process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT!)
-    .setProject(process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT!)
-    .setPlatform(process.env.EXPO_PUBLIC_APPWRITE_PLATFORM!)
+    .setEndpoint("https://fra.cloud.appwrite.io/v1")
+    .setProject("684d8fd1002b5462c7ab")
+    // .setPlatform(process.env.EXPO_PUBLIC_APPWRITE_PLATFORM!)
 
 
 export const account = new Account(myclient)
