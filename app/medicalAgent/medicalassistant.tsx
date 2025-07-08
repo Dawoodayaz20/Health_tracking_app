@@ -7,18 +7,20 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from "react-native";
+import handleResponse from '../../lib/agentauth'
 
 export default function MedicalAssist() {
   const [messages, setMessages] = useState<{ text: string; from: "user" | "bot" }[]>([]);
   const [text, setText] = useState<string>("");
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!text.trim()) return;
+    const reply = await handleResponse(text)
     
     setMessages((prev) => [
       ...prev,
       { text, from: "user" },
-      { text: "I'm your assistant. Got it!", from: "bot" }, // mock reply
+      { text: reply, from: "bot" }, // mock reply
     ]);
     setText("");
   };
