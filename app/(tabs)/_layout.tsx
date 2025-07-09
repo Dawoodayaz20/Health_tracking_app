@@ -1,6 +1,6 @@
 import { Tabs } from "expo-router";
 import {StyleSheet} from "react-native";
-
+import { MaterialCommunityIcons } from '@expo/vector-icons'
 
 export default function TabsLayout() {
   return (
@@ -26,7 +26,12 @@ export default function TabsLayout() {
         }}/>
       <Tabs.Screen name="login" options={{ 
         title: "Profile",
-        headerStyle: styles.headerStyle
+        headerStyle: styles.headerStyle,
+        tabBarIcon: ({ color, focused }) => (
+        <MaterialCommunityIcons 
+        name="calendar-today" 
+        size={12}
+        />),
         }}/>
     </Tabs>
   );
